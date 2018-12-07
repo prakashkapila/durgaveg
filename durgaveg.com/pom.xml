@@ -7,7 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>durgaveg.com</name>
+	<name>Durgaveg</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -15,15 +15,36 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<version>4.12</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail -->
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11 -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency> <!-- Spark dependency -->
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.11</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<!-- Mongo Dependencies -->
+		<dependency>
+			<groupId>org.mongodb.spark</groupId>
+			<artifactId>mongo-spark-connector_2.11</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<!-- Machine Library dependencies -->
+		<dependency>
+ 			<groupId>org.apache.spark</groupId>
+ 			<artifactId>spark-mllib_2.11</artifactId>
+ 			<version>2.2.1</version>
+ 		</dependency>
+ 			<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
@@ -42,7 +63,7 @@
 			<artifactId>google-oauth-client-jetty</artifactId>
 			<version>1.23.0</version>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>com.google.apis</groupId>
 			<artifactId>google-api-services-gmail</artifactId>
