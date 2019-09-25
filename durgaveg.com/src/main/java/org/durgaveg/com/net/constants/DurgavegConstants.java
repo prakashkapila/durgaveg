@@ -1,0 +1,55 @@
+package org.durgaveg.com.net.constants;
+
+public interface DurgavegConstants {
+String DECSALES ="D:\\durgaveg\\data\\orders\\sales1to19thdec.csv";
+String ALLECWID = "D:\\durgaveg\\data\\orders\\orders_ecwid.csv";
+String DATEFORMATCOL="OrderDate";
+String ECWID_TEXTCOLS[]=new String[] {
+"order_number",
+"email",
+"sku",
+"name",
+"weight",
+ "quantity",
+"options",
+ "shipto_person_name",
+"shipto_person_street_1",
+"shipto_person_street_2",
+"shipto_person_city",
+"shipto_person_country_code",
+"shipto_person_postal_code",
+"shipto_person_state_code",
+"shipto_person_country_name",
+"shipto_person_state_name",
+"shipto_person_phone",
+"bill_person_name",
+"bill_person_street_1",
+"bill_person_street_2",
+"bill_person_city",
+"bill_person_country_code",
+"bill_person_postal_code",
+"bill_person_state_code",
+"bill_person_country_name",
+"bill_person_state_name",
+"bill_person_phone",
+"customer_group",
+"payment_method",
+"shipping_method",
+"payment_status",
+"fulfillment_status",
+"payment_status_code",
+"fulfillment_status_code",
+"order_shipping",
+"order_handling_fee",
+"order_tracking_number",
+"coupon_code",
+"coupon_discount",
+"volume_discount",
+"detail_discount",
+"discount",
+"order_weight",
+"order_comments",
+"affiliate_id",
+"customer_ipaddress"
+};
+}
