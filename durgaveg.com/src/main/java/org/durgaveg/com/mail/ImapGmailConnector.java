@@ -36,12 +36,16 @@ public class ImapGmailConnector {
 
 		/**
 		 * to login to the mail host server
+		 * @throws Exception 
 		 */
+		public void login() throws Exception {
+			login("imap.gmail.com", "prakashkapila@gmail.com",
+					"primeminister");
+		}
 		public void login(String host, String username, String password)
 				throws Exception {
 			URLName url = new URLName(protocol, host, 993, file, username, password);
-
-			if (session == null) {
+ 		if (session == null) {
 				Properties props = null;
 				try {
 					props = System.getProperties();
@@ -53,8 +57,7 @@ public class ImapGmailConnector {
 			store = session.getStore(url);
 			store.connect();
 			folder = store.getFolder(url);
-
-			folder.open(Folder.READ_WRITE);
+ 		folder.open(Folder.READ_WRITE);
 		}
 
 		/**
@@ -78,9 +81,17 @@ public class ImapGmailConnector {
 		}
 
 		public Message[] getMessages() throws MessagingException {
-			
-			return folder.getMessages(22200,22279);
+			 return folder.getMessages();
 		}
+		public Message[] getMessages(int start,int end) throws Exception {
+			if(folder == null)
+			{
+				login("imap.gmail.com", "prakashkapila@gmail.com",
+						"primeminister");
+			}	
+			 return folder.getMessages(start, end);
+		}
+		
 		String subj="";
 		public List<Message> processDurgaVeg() throws MessagingException {
 			Message[] msgs = getMessages();
@@ -106,19 +117,13 @@ public class ImapGmailConnector {
 		// compile those messages into objects
 		// convert objects into csv.
 		
-		public static void main(String arg[]) throws Exception
-		{
-			ImapGmailConnector mailService = new ImapGmailConnector();
-			mailService.login("imap.gmail.com", "*********@gmail.com",
-					"**********");
-			int messageCount = mailService.getMessageCount();
-			System.out.println(" mail count is"+messageCount);
-			for(Message msg : mailService.processDurgaVeg()) {
-				System.out.println(msg.getSubject()+" "+msg.getSentDate());
-			//	System.out.println(msg.getContentType());
-				System.out.println(msg.getContent());
-			}
+		public Message[] getAllMessages() throws Exception{
+			 login("imap.gmail.com", "ur@email.com",
+					"password");
+			System.out.println(" mail count is"+getMessageCount());
+			return getMessages();
 		}
+		 
 	}
  
 

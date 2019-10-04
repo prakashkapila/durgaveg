@@ -1,0 +1,51 @@
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Could not instrument class sun/security/krb5/Config: null.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.security.authentication.util.KerberosUtil (file:/C:/Users/praka/.m2/repository/org/apache/hadoop/hadoop-auth/2.6.5/hadoop-auth-2.6.5.jar) to method sun.security.krb5.Config.getInstance()
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.security.authentication.util.KerberosUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Could not instrument class sun/security/krb5/Config$FileExistsAction: null.
+Could not instrument class sun/security/krb5/Credentials: null.
+Could not instrument class sun/security/krb5/Credentials$1: null.
+Could not instrument class sun/security/krb5/Config$1: null.
+Could not instrument class sun/security/krb5/Config$2: null.
+19/10/01 15:34:15 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Could not instrument class sun/security/smartcardio/SunPCSC: null.
+Could not instrument class sun/security/smartcardio/SunPCSC$1: null.
+Could not instrument class sun/security/smartcardio/SunPCSC$ProviderService: null.
+Could not instrument class sun/security/ec/SunEC: null.
+Could not instrument class sun/security/ec/SunEC$ProviderService: null.
+Could not instrument class sun/security/ec/SunEC$1: null.
+Could not instrument class sun/security/ec/SunEC$2: null.
+Could not instrument class sun/security/ec/ECDSASignature$SHA1: null.
+Could not instrument class sun/security/ec/ECDSASignature: null.
+Could not instrument class sun/security/ec/ECDSASignature$Raw: null.
+Could not instrument class sun/security/ec/ECDSASignature$RawECDSA: null.
+19/10/01 15:34:21 INFO OrderCollector: total messages are 22400
+19/10/01 15:37:40 INFO OrderCollector: orders to add are 0
+19/10/01 15:37:40 INFO OrderCollector:  Total messages processed  500
+19/10/01 15:39:12 INFO OrderCollector: orders to add are 0
+19/10/01 15:39:12 INFO OrderCollector:  Total messages processed  1000
+19/10/01 15:40:46 INFO OrderCollector: orders to add are 0
+19/10/01 15:40:46 INFO OrderCollector:  Total messages processed  1500
+19/10/01 15:42:19 INFO OrderCollector: orders to add are 0
+19/10/01 15:42:19 INFO OrderCollector:  Total messages processed  2000
+19/10/01 15:43:52 INFO OrderCollector: orders to add are 0
+19/10/01 15:43:52 INFO OrderCollector:  Total messages processed  2500
+19/10/01 15:45:25 INFO OrderCollector: orders to add are 0
+19/10/01 15:45:25 INFO OrderCollector:  Total messages processed  3000
+19/10/01 15:46:56 INFO OrderCollector: orders to add are 0
+19/10/01 15:46:56 INFO OrderCollector:  Total messages processed  3500
+19/10/01 15:48:30 INFO OrderCollector: orders to add are 0
+19/10/01 15:48:30 INFO OrderCollector:  Total messages processed  4000
+19/10/01 15:50:03 INFO OrderCollector: orders to add are 0
+19/10/01 15:50:03 INFO OrderCollector:  Total messages processed  4500
+19/10/01 15:51:35 INFO OrderCollector: orders to add are 0
+19/10/01 15:51:35 INFO OrderCollector:  Total messages processed  5000
+19/10/01 15:53:07 INFO OrderCollector: orders to add are 0
+19/10/01 15:53:07 INFO OrderCollector:  Total messages processed  5500
+19/10/01 15:54:40 INFO OrderCollector: orders to add are 0
+19/10/01 15:54:40 INFO OrderCollector:  Total messages processed  6000
+19/10/01 15:56:14 INFO OrderCollector: orders to add are 0
+19/10/01 15:56:14 INFO OrderCollector:  Total messages processed  6500
