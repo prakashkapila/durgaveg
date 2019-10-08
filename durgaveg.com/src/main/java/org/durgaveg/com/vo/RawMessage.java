@@ -9,7 +9,7 @@ public class RawMessage implements Serializable {
 	String htmlMessage;
 	String from;
 	String date;
-	
+	static final String delim = "!#";
 	public String getSubject() {
 		return subject;
 	}
@@ -39,5 +39,7 @@ public class RawMessage implements Serializable {
 		this.date = sentDate != null ? sentDate.toString():null;
 	}
 	 
-	
+	public String toString() {
+		 return new StringBuilder().append(subject).append(delim).append(date).append(delim).append(htmlMessage).toString();
+	}
 }

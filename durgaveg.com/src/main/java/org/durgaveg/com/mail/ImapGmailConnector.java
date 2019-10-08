@@ -29,7 +29,7 @@ public class ImapGmailConnector {
 		private String file = "INBOX";
 
 		 
-
+		public boolean isOpen() {return folder != null && folder.isOpen();}
 		public boolean isLoggedIn() {
 			return store.isConnected();
 		}
@@ -39,8 +39,8 @@ public class ImapGmailConnector {
 		 * @throws Exception 
 		 */
 		public void login() throws Exception {
-			login("imap.gmail.com", "prakashkapila@gmail.com",
-					"primeminister");
+			login("imap.gmail.com", "ur@gmail.com",
+					"urpassword");
 		}
 		public void login(String host, String username, String password)
 				throws Exception {
@@ -73,8 +73,12 @@ public class ImapGmailConnector {
 		public int getMessageCount() {
 			int messageCount = 0;
 			try {
+				if(folder == null)
+				{
+					login();
+				}
 				messageCount = folder.getMessageCount();
-			} catch (MessagingException me) {
+			} catch ( Exception me) {
 				me.printStackTrace();
 			}
 			return messageCount;
@@ -118,8 +122,8 @@ public class ImapGmailConnector {
 		// convert objects into csv.
 		
 		public Message[] getAllMessages() throws Exception{
-			 login("imap.gmail.com", "ur@email.com",
-					"password");
+			 login("imap.gmail.com", "prakashkapila@gmail.com",
+					"primeminister");
 			System.out.println(" mail count is"+getMessageCount());
 			return getMessages();
 		}
