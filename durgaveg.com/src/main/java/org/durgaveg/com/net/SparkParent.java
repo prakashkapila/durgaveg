@@ -11,10 +11,7 @@ public abstract class SparkParent {
 		System.setProperty("hadoop.home.dir", "D:\\winutils-master\\winutils-master\\hadoop-2.7.1");
 		if(!DEBUG)
 		org.apache.log4j.Logger.getLogger("org.apache.spark").setLevel(Level.ERROR);
-		initSession();
-		
-		
-	}
+ 	}
 	public void initSession() {
 		if (session == null) {
 			session = SparkSession.builder().master("local").appName("VegetablePrices")

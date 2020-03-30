@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -17,51 +18,52 @@
 	</properties>
 	<build>
 		<plugins>
-		   <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-         <configuration>
-           <archive>
-            <manifest>
-              <addClasspath>true</addClasspath>
-              <mainClass>org.durgaveg.com.driver.SparkOrderCollector</mainClass>
-            </manifest>
-          </archive>
-         </configuration>
-       </plugin>
-       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.1</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>org.durgaveg.com.driver.SparkOrderCollector</mainClass>
-                </transformer>
-              </transformers>
-              <filters>
-            <filter>
-              <artifact>*:*</artifact>
-              <excludes>
-                <exclude>META-INF/*.SF</exclude>
-                <exclude>META-INF/*.DSA</exclude>
-                <exclude>META-INF/*.RSA</exclude>
-              </excludes>
-            </filter>
-         
-              </filters>
-              
-            </configuration>
-            
-          </execution>
-        </executions>
-      </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>org.durgaveg.com.driver.SparkOrderCollector</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>org.durgaveg.com.driver.SparkOrderCollector</mainClass>
+								</transformer>
+							</transformers>
+							<filters>
+								<filter>
+									<artifact>*:*</artifact>
+									<excludes>
+										<exclude>META-INF/*.SF</exclude>
+										<exclude>META-INF/*.DSA</exclude>
+										<exclude>META-INF/*.RSA</exclude>
+									</excludes>
+								</filter>
+
+							</filters>
+
+						</configuration>
+
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -89,11 +91,11 @@
 		</dependency>
 		<!-- Machine Library dependencies -->
 		<dependency>
- 			<groupId>org.apache.spark</groupId>
- 			<artifactId>spark-mllib_2.11</artifactId>
- 			<version>2.2.1</version>
- 		</dependency>
- 			<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail -->
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-mllib_2.11</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail -->
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
@@ -118,5 +120,37 @@
 			<artifactId>google-api-services-gmail</artifactId>
 			<version>v1-rev92-1.23.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.datavec/datavec-api -->
+		<dependency>
+			<groupId>org.datavec</groupId>
+			<artifactId>datavec-api</artifactId>
+			<version>1.0.0-beta5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.13</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.deeplearning4j</groupId>
+			<artifactId>deeplearning4j-core</artifactId>
+			<version>1.0.0-beta4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.nd4j</groupId>
+			<artifactId>nd4j-native-platform</artifactId>
+			<version>1.0.0-beta4</version>
+		</dependency>
+		<!--
+		org.nd4j:nd4j-native-platform:0.9.1	n/a	CPU-only machines
+org.nd4j:nd4j-cuda-8.0-platform:0.9.1	n/a	GPU-enabled machines w/ CUDA
+org.deeplearning4j:deeplearning4j-core:0.9.1	n/a	CPU-only or GPU machines w/o CuDNN
+org.deeplearning4j:deeplearning4j-cuda-8.0:0.9.1	n/a	GPU machines w/ CuDNN installed
+org.deeplearning4j:deeplearning4j-zoo:0.9.1	n/a	native zoo functionality (pretrained models)
+org.datavec:datavec-spark_2.11:0.9.1_spark_2	org.scala-lang:scala-compiler	always
+org.deeplearning4j:dl4j-spark_2.11:0.9.1_spark_2	org.scala-lang:scala-compiler	always
+		 https://deeplearning4j.org/deeplearningforbeginners.html -->
 	</dependencies>
 </project>

@@ -39,8 +39,8 @@ public class ImapGmailConnector {
 		 * @throws Exception 
 		 */
 		public void login() throws Exception {
-			login("imap.gmail.com", "ur@gmail.com",
-					"urpassword");
+			login("imap.gmail.com", "prakashkapila@gmail.com",
+					"primeminister");
 		}
 		public void login(String host, String username, String password)
 				throws Exception {
